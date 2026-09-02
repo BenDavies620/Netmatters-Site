@@ -10,64 +10,92 @@ footer {
     }
 
     .footer-row {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    h4 {
+        text-transform: uppercase;
+        font-size: 1rem;
+        margin: 24px 0px 26px;
+        color: $text-white; 
+    }
+
+    .footer-menu {
+        flex: 100%;
+        margin-bottom: 30px;
+        padding-bottom: $spacing-md;
+
+        @media (min-width: 768px) {
+            flex: 50%;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        @media (min-width: 992px) {
+            flex: 25%;
+        }
+
+        @media (min-width: 1260px) {
+            margin-bottom: 40px;
+        }
 
         h4 {
             text-transform: uppercase;
             font-size: 1rem;
-            margin: 24px 0px 26px;
-            color: $text-white; 
+            margin: 0px 0px 26px;
+            color: $text-white;
         }
 
-        .footer-menu {
-            flex: 100%;
-            margin-bottom: 30px;
-            padding-bottom: $spacing-md;
-
-            @media (min-width: 768px) {
-                flex: 50%;
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-            @media (min-width: 992px) {
-                flex: 25%;
-            }
-            @media (min-width: 1260px) {
-                margin-bottom: 40px;
-            }
-            h4 {
-                text-transform: uppercase;
-                font-size: 1rem;
-                margin: 0px 0px 26px;
-                color: $text-white;
-            }
-            ul {
-                padding: 0;
-                margin: 0;
-                list-style: none;
-            }
-            a {
-                color: $text-light;
-                font-size: .9rem;
-                transition: color .2s ease;
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
-        > .row{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            gap: 0;
 
-            @media (min-width: 768px) {
-                flex-direction: row;
+        a {
+            color: $text-light;
+            font-size: .9rem;
+            transition: color .2s ease;
+
+            &:hover {
+                text-decoration: underline;
             }
         }
     }
+
+    > .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 0;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+
+    // DESKTOP FOOTER LAYOUT
+    @media (min-width: 1260px) {
+        flex-direction: row;
+        align-items: flex-start;
+
+        .footer-company-info {
+            flex: 0 0 35%;
+            padding-right: 60px;
+            box-sizing: border-box;
+        }
+
+        > .row {
+            flex: 0 0 65%;
+            flex-direction: row;
+        }
+
+        .footer-menu {
+            flex: 0 0 25%;
+        }
+    }
+}
 }    
 //LOGO & SOCIIAL LINKS
 .footer-company-info {
