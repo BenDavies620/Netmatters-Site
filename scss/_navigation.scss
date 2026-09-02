@@ -1,0 +1,277 @@
+.navigation {
+    display: none;
+
+    @media (min-width: 992px) {
+        display: block;
+    }
+
+    background-color: $dark-blue;
+
+    .main-navigation {
+        position: relative;
+    }
+
+    .main-navigation > .container > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-item {
+        flex: 1;
+        text-align: center;
+
+        > a {
+            display: block;
+            position: relative;
+            padding: 19px 0 18px;
+            color: $text-white;
+            text-decoration: none;
+            text-transform: uppercase;
+            line-height: 1;
+            transition: background-color .2s ease;
+            height: 100%;
+
+            .icon-apps {
+                display: block;
+                padding-bottom: 10px;
+                text-align: center;
+
+                svg {
+                    width: 23px;
+                    height: 23px;
+                    fill: currentColor;
+                }
+            }
+            small {
+                display: block;
+                font-size: 0.625rem;
+                padding-bottom: 1px;
+            }
+            p {
+                display: block;
+                margin: 0;
+                font-size: 1.125rem;
+            }
+        }
+
+
+        &.software > a {
+            color: $soft-yellow;
+
+            small,
+            p {
+                color: $text-white;
+            }
+        }
+        &.it > a {
+            color: $it-blue;
+
+            small,
+            p {
+                color: $text-white;
+            }
+        }
+        &.digital > a {
+            color: $dig-green;
+
+            small,
+            p {
+                color: $text-white;
+            }
+        }
+        &.telecoms > a {
+            color: $tel-red;
+
+            small,
+            p {
+                color: $text-white;
+            }
+        }
+        &.web > a {
+            color: $web-purple;
+
+            small,
+            p {
+                color: $text-white;
+            }
+        }
+        &.security > a {
+            color: $sec-pink;
+
+            small,
+            p {
+                color: $text-white;
+            }
+        }
+        &.developer-course > a {
+            color: $dev-orange;
+
+            small,
+            p {
+                color: $text-white;
+            }
+        }
+
+
+        &.software:hover > a {
+            background-color: lighten($soft-yellow, 8%);
+            color: $text-white;
+        }
+        &.it:hover > a {
+            background-color: lighten($it-blue, 8%);
+            color: $text-white;
+        }
+        &.digital:hover > a {
+            background-color: lighten($dig-green, 8%);
+            color: $text-white;
+        }
+        &.telecoms:hover > a {
+            background-color: lighten($tel-red, 8%);
+            color: $text-white;
+        }
+        &.web:hover > a {
+            background-color: lighten($web-purple, 8%);
+            color: $text-white;
+        }
+        &.security:hover > a {
+            background-color: lighten($sec-pink, 8%);
+            color: $text-white;
+        }
+        &.developer-course:hover > a {
+            background-color: lighten($dev-orange, 8%);
+            color: $text-white;
+        }
+
+
+        > a::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            z-index: 10;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            background-color: transparent;
+        }
+        &.software:hover > a::after {
+            background-color: lighten($soft-yellow, 8%);
+        }
+        &.it:hover > a::after {
+            background-color: lighten($it-blue, 8%);
+        }
+        &.digital:hover > a::after {
+            background-color: lighten($dig-green, 8%);
+        }
+        &.telecoms:hover > a::after {
+            background-color: lighten($tel-red, 8%);
+        }
+        &.web:hover > a::after {
+            background-color: lighten($web-purple, 8%);
+        }
+        &.security:hover > a::after {
+            background-color: lighten($sec-pink, 8%);
+        }
+        &.developer-course:hover > a::after {
+            background-color: lighten($dev-orange, 8%);
+        }
+
+
+        .sub-menu-banner {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            top: 100%;
+            z-index: 5;
+            padding: 30px 0;
+        }
+        &:hover .sub-menu-banner {
+            display: block;
+        }
+
+
+        &.software .sub-menu-banner {
+            background-color: $soft-yellow;
+        }
+        &.it .sub-menu-banner {
+            background-color: $it-blue;
+        }
+        &.digital .sub-menu-banner {
+            background-color: $dig-green;
+        }
+        &.telecoms .sub-menu-banner {
+            background-color: $tel-red;
+        }
+        &.web .sub-menu-banner {
+            background-color: $web-purple;
+        }
+        &.security .sub-menu-banner {
+            background-color: $sec-pink;
+        }
+        &.developer-course .sub-menu-banner {
+            background-color: $dev-orange;
+        }
+
+
+        .sub-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: left;
+
+            .sub-menu-banner-title {
+                grid-column: 1 / -1;
+                margin: 0 0 10px;
+                padding-bottom: 15px;
+
+                color: $text-white;
+                font-size: 2rem;
+                font-weight: 500;
+                text-align: left;
+            }
+        }
+
+        .nav-item--sub-menu {
+            text-align: left;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+
+                padding: 8px 12px;
+
+                color: $text-white;
+                text-decoration: none;
+
+                .link-icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 25px;
+
+                    svg {
+                        width: 1.2em;
+                        height: 1.2em;
+                        fill: $text-white;
+                    }
+                }
+                .link-text {
+                    font-size: 1.2rem;
+                    line-height: 1.3;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

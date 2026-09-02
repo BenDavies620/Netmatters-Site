@@ -1,0 +1,198 @@
+footer {
+    background-color: $primary-blue;
+    color: $text-white;
+    padding: 27px 0 0;
+    position: relative;
+    letter-spacing: .4px;
+
+    @media (min-width: 1260px) {
+        padding-top: 47px;
+    }
+
+    .footer-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        h4 {
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin: 24px 0px 26px;
+            color: $text-white; 
+        }
+
+        .footer-menu {
+            flex: 100%;
+            margin-bottom: 30px;
+            padding-bottom: $spacing-md;
+
+            @media (min-width: 768px) {
+                flex: 50%;
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            @media (min-width: 992px) {
+                flex: 25%;
+            }
+            @media (min-width: 1260px) {
+                margin-bottom: 40px;
+            }
+            h4 {
+                text-transform: uppercase;
+                font-size: 1rem;
+                margin: 0px 0px 26px;
+                color: $text-white;
+            }
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            a {
+                color: $text-light;
+                font-size: .9rem;
+                transition: color .2s ease;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        > .row{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 0;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+            }
+        }
+    }
+}    
+//LOGO & SOCIIAL LINKS
+.footer-company-info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    align-items: flex-start;
+    text-align: left;
+
+}
+.footer img {
+    max-width: 180px;
+    height: auto;
+}
+.footer-social-menu h4 {
+    margin: $spacing-sm 0 $spacing-xs;
+    font-size: 1rem;
+    color: $text-light;
+}
+.footer-social-logos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 0px 30px;
+
+    svg {
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        stroke-width: 0;
+        stroke: currentColor;
+        fill: currentColor;
+    }
+}
+.footer-social-logos a {
+    margin: 0 10px 10px 0;
+    padding: 12px 22px 16px;
+    width: 68px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    border: 2px solid transparent;
+} 
+.footer-social-logos .btn-primary {
+    background-color: $dark-grey;
+    color: $text-white;
+    border-color: $dark-grey;
+}
+.footer-social-logos .facebook:hover,
+.footer-social-logos .facebook:focus {
+  background-color: #124d8b;
+  border-color: #124d8b;
+}
+.footer-social-logos .linkedin:hover,
+.footer-social-logos .linkedin:focus {
+  background-color: #0a66c2;
+  border-color: #0a66c2;
+}
+.footer-social-logos .x:hover,
+.footer-social-logos .x:focus {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+}
+.footer-social-logos .instagram:hover,
+.footer-social-logos .instagram:focus {
+  background-color: #e4405f;
+  border-color: #e4405f;
+}
+
+// FOOTER BOTTOM / COPYRIGHT BAR
+.footer-bottom {
+    width: 100%;
+    background: $dark-grey;
+    color: $text-white;
+    font-size: .9rem;
+    letter-spacing: .4px;
+    padding: 10px 0;
+
+    .container {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .license {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        color: $text-white;
+
+        p {
+            margin: 0;
+            font-size: .85rem;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        li {
+            display: inline-block;
+            position: relative;
+
+            &::before {
+                content: "-";
+                margin: 0 8px;
+            }
+        }
+
+        a {
+            font-size: .85rem;
+            color: $text-white;
+            transition: color .2s ease;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

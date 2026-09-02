@@ -1,0 +1,254 @@
+//ABOUT SECTION
+.about {
+    background-color: $dark-blue;
+    color: $text-white;
+
+    .container.section {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px 15px;
+    }
+
+    .welcome {
+        flex: 1 1 100%;
+        padding: 0px 15px;
+
+        @media (max-width: 991px) {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            margin: 0 0 25px;
+            strong{
+                font-weight: 700;
+            }
+        }
+
+        p {
+           font-size: 1rem;
+           margin: 0px 0px 25px;
+           line-height: 1.875rem;
+            &:first-of-type {
+                font-weight: 600;
+            }
+        }
+
+        //BUTTON CONTAINER
+        .button-row-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 17px;
+            margin-top: auto;
+
+            flex-direction: column;
+            align-items: flex-start;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+            }
+
+            @media (min-width: 992px) and (max-width: 1259px) {
+                flex-direction: column;
+            }
+
+            @media (min-width: 1260px) {
+                flex-direction: row;
+            }
+        }
+
+        //PRIMARY INVERSE BUTTONS
+        .btn-primary-inverse {
+            display: inline-block;
+            padding: 10px 30px;
+            border: 1px solid $dark-grey;
+            border-radius: 6px;
+            background-color: $dark-grey;
+            color: $text-white;
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 35px;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            transition: all .2s ease;
+
+            &:hover {
+                background-color: #191922;
+            }
+
+            .icon-arrow-right2 {
+                display: inline-block;
+                margin: 0px -4px 0px 12px;
+                font-style: normal;
+                line-height: 35px;
+                width: 1em;
+                height: 1em;
+                stroke-width: 0;
+                stroke: currentColor;
+                fill: currentColor;
+                vertical-align: middle;
+            }
+        }
+
+        .btn-choose,
+        .btn-culture {
+            margin: 0;
+            padding: 10px 30px;
+        }
+    }
+
+    .testimonials {
+        flex: 1 1 100%;
+        padding: 0px 15px;
+        display: grid;
+
+        h2 {
+            font-size: 2.25rem;
+            margin: 0 0 15px;
+        }
+
+        .stars {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .fa-star {
+            color: #ff9900;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            margin-right: 4px;
+
+            &::before {
+                width: 46.84px;
+                height: 51px;
+            }
+        }
+
+        p {
+            margin: 0px 0px 25px;
+            line-height: 1.875rem;
+        }
+
+        .client-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        .client-quote-author {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: $text-muted;
+
+            a {
+                color: $text-white;    
+                text-decoration: none;
+                transition: all .2s ease;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .review-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: auto;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        @media (min-width: 992px) and (max-width: 1259px) {
+            flex-direction: column;
+        }
+
+        @media (min-width: 1260px) {
+            flex-direction: row;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 35px;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $text-white;
+            white-space: nowrap;
+            transition: background-color 0.2s ease;
+
+            .icon-arrow-right2 {
+                display: inline-block;
+                margin: 0px -4px 0px 12px;
+                font-style: normal;
+                line-height: 35px;
+                width: 1em;
+                height: 1em;
+                stroke-width: 0;
+                stroke: currentColor;
+                fill: currentColor;
+                vertical-align: middle;
+            }
+        }
+
+        .btn-google {
+            background-color: #4387f6;
+            margin: 0;
+
+            &:hover {
+                background-color: darken(#4387f6, 10%);
+            }
+        }
+
+        .btn-trustpilot {
+            background-color: #00b67b;
+            margin: 0;
+
+            &:hover {
+                background-color: darken(#00b67b, 10%);
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container.section {
+            padding: 50px 15px;
+        }
+
+        .welcome {
+            flex: 1 1 calc(50% - 25px);
+            display: flex;
+            flex-direction: column;
+
+            .button-row-top {
+                margin-top: auto;
+            }
+        }
+
+        .testimonials {
+            flex: 1 1 calc(50% - 25px);
+        }
+
+        .welcome, .testimonials {
+            align-self: stretch;
+        }
+    }
+
+    @media (min-width: 1260px) {
+        .review-buttons {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+    }
+}

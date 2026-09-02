@@ -1,0 +1,384 @@
+.middle {
+    padding: 50px 0;
+    position: relative;
+
+    .section {
+        position: relative;
+    }
+
+    .services-header {
+        h2 {
+            font-size: 2.7rem;
+            margin: 0 0 30px;
+            color: $dark-blue;
+        }
+    }
+
+    .services-view-all {
+        text-align: center;
+        padding: 30px 0 0;
+
+        a {
+            color: $dark-blue;
+            font-size: 26px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.5s ease;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .icon-arrow-right2 {
+                display: inline-block;
+                font-style: normal;
+                line-height: 35px;
+                width: 1em;
+                height: 1em;
+                stroke-width: 0;
+                stroke: currentColor;
+                fill: currentColor;
+                vertical-align: middle;
+            }
+        }
+
+        @media (min-width: 768px) {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            padding: 0;
+
+            a {
+                font-size: 36px;
+            }
+        }
+    }
+
+    .our-services-lg,
+    .our-services-md {
+        padding: 0 15px;
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 30px;
+            font-size: 1rem;
+            color: $dark-blue;
+            text-decoration: none;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 100%;
+            transition: all 0.5s ease;
+            &:hover {
+                transform: translateY(-7px);
+                cursor: pointer;
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 17px;
+                width: 65px;
+                height: 65px;
+                border-radius: 50%;
+                color: #fff;
+                transition: all 0s ease;
+
+                svg {
+                    width: 32px;
+                    height: 32px;
+                    fill: currentColor;
+                    stroke: currentColor;
+                    stroke-width: 0;
+                    transition: fill 0s ease;
+                }
+            }
+            
+            .h2 {
+                display: block;
+                margin: 0 0 11px;
+                padding: 0 0 10px;
+                color: $dark-blue;
+                font-size: 20.8px;
+            }
+
+            .p {
+                display: block;
+                margin: 0 0 13px;
+                font-size: 13px;
+                color: $dark-blue;
+                line-height: 1.375rem;
+            }
+
+            .btn {
+                display: inline-block;
+                margin-top: auto;
+                padding: 5px 15px;
+                font-size: 1.063rem;
+                text-transform: uppercase;
+                border: 1px solid transparent;
+                border-radius: 3px;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 35px;
+                height: auto;
+                align-self: center;
+            }
+        }
+        .software .icon {
+            background-color: $soft-yellow;
+            border-color: $soft-yellow;
+        }
+        .software:hover .icon {
+            background-color: #fff;
+            color: $soft-yellow;
+            border-color: #fff;
+        }
+        .it .icon {
+            background-color: $it-blue;
+            border-color: $it-blue;
+        }
+        .it:hover .icon {
+            background-color: #fff;
+            color: $it-blue;
+            border-color: #fff;
+        }
+        .digital .icon {
+            background-color: $dig-green;
+            border-color: $dig-green;
+        }
+        .digital:hover .icon {
+            background-color: #fff;
+            color: $dig-green;
+            border-color: #fff;
+        }
+        .telecoms .icon {
+            background-color: $tel-red;
+            border-color: $tel-red;
+        }
+        .telecoms:hover .icon {
+            background-color: #fff;
+            color: $tel-red;
+            border-color: #fff;
+        }
+        .web .icon {
+            background-color: $web-purple;
+            border-color: $web-purple;
+        }
+        .web:hover .icon {
+            background-color: #fff;
+            color: $web-purple;
+            border-color: #fff;
+        }
+        .security .icon {
+            background-color: $sec-pink;
+            border-color: $sec-pink;
+        }
+        .security:hover .icon {
+            background-color: #fff;
+            color: $sec-pink;
+            border-color: #fff;
+        }
+        .developer-course .icon {
+            background-color: $dev-orange;
+            border-color: $dev-orange;
+        }
+        .developer-course:hover .icon {
+            background-color: #fff;
+            color: $dev-orange;
+            border-color: #fff;
+        }
+    }
+
+    .software {
+        .btn-software {
+            @include software-yellow;
+        }
+        &:hover {
+            background-color: $soft-yellow;
+            color: $text-white;
+
+            .h2, .p {
+                color: $text-white;
+            }
+
+            .btn-software {
+                background-color: $text-white;
+                color: $soft-yellow;
+                border-color: $text-white;
+            }
+        }
+    }
+    .it {
+        .btn-it {
+            @include it-blue;
+        }
+        &:hover {
+            background-color: $it-blue;
+            color: $text-white;
+
+            .h2, .p {
+                color: $text-white;
+            }
+
+            .btn-it {
+                background-color: $text-white;
+                color: $it-blue;
+                border-color: $text-white;
+            }
+        }
+    }
+    .digital {
+        .btn-digital {
+            @include digital-green;
+        }
+        &:hover {
+            background-color: $dig-green;
+            color: $text-white;
+
+            .h2, .p {
+                color: $text-white;
+            }
+
+            .btn-digital {
+                background-color: $text-white;
+                color: $dig-green;
+                border-color: $text-white;
+            }
+        }
+    }
+    .telecoms {
+        .btn-telecoms {
+            @include telecoms-red;
+        }
+        &:hover {
+            background-color: $tel-red;
+            color: $text-white;
+
+            .h2, .p {
+                color: $text-white;
+            }
+
+            .btn-telecoms {
+                background-color: $text-white;
+                color: $tel-red;
+                border-color: $text-white;
+            }
+        }
+    }
+    .web {
+        .btn-web {
+            @include web-purple;
+        }
+        &:hover {
+            background-color: $web-purple;
+            color: $text-white;
+
+            .h2, .p {
+                color: $text-white;
+            }
+
+            .btn-web {
+                background-color: $text-white;
+                color: $web-purple;
+                border-color: $text-white;
+            }
+        }
+    }
+    .security {
+        .btn-security {
+            @include security-pink;
+        }
+        &:hover {
+            background-color: $sec-pink;
+            color: $text-white;
+
+            .h2, .p {
+                color: $text-white;
+            }
+
+            .btn-security {
+                background-color: $text-white;
+                color: $sec-pink;
+                border-color: $text-white;
+            }
+        }
+    }
+    .developer-course {
+        .btn-developer-course {
+            @include developer-course-orange;
+        }
+        &:hover {
+            background-color: $dev-orange;
+            color: $text-white;
+
+            .h2, .p {
+                color: $text-white;
+            }
+
+            .btn-developer-course {
+                background-color: $text-white;
+                color: $dev-orange;
+                border-color: $text-white;
+            }
+        }
+    }
+
+    .container.section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px 0;
+
+        .services-header {
+            grid-column: 1 / -1;
+        }
+
+        .services-view-all {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .container.section {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 0;
+
+            .our-services-lg {
+                grid-column: span 2 / 3;
+            }
+            .our-services-md {
+                grid-column: span 1;
+            }
+            .services-header {
+                grid-column: 1 / -1;
+            }
+            .services-view-all {
+                grid-column: 1 / -1;
+            }
+        }
+    }
+    @media (min-width: 992px) {
+        .container.section {
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px 0;
+
+            .our-services-lg {
+                grid-column: span 4;
+            }
+            .our-services-md {
+                grid-column: span 3;
+            }
+            .services-header {
+                grid-column: 1 / -1;
+            }
+            .services-view-all {
+                grid-column: 1 / -1;
+            }
+        }
+    }
+}

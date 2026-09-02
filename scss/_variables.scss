@@ -1,0 +1,67 @@
+//MIXINS
+@mixin web-purple {
+    color: #fff;
+    background-color: #926fb1;
+    border-color: #926fb1;
+}
+@mixin digital-green {
+    color: #fff;
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+@mixin software-yellow {
+    color: #fff;
+    background-color: #67809f;
+    border-color: #67809f;
+}
+@mixin it-blue {
+    color: #fff;
+    background-color: #4183d7;
+    border-color: #4183d7;
+}
+@mixin telecoms-red {
+    color: #fff;
+    background-color: #d64541;
+    border-color: #d64541;
+}
+@mixin security-pink {
+    color: #fff;
+    background-color: #f62459;
+    border-color: #f62459;
+}
+@mixin developer-course-orange {
+    color: #fff;
+    background-color: #ce4125;
+    border-color: #ce4125;
+}
+@mixin default-grey {
+    color: #fff;
+    background-color: #999aa2;
+    border-color: #999aa2;
+}
+//COLORS
+$primary-blue: #323544;
+$dark-blue: #333645;
+$dark-grey: #212330;
+$text-dark: #333;
+$text-white: #fff;
+$text-light: rgba(255, 255, 255, .8);
+$text-muted: rgba(255,255,255,.6);
+$border-faint: rgba(255, 255, 255, .1);
+$web-purple: #926FB1;
+$dig-green: #2ecc71;
+$soft-yellow: #67809f;
+$it-blue: #4183d7;
+$tel-red: #d64541;
+$sec-pink: #f62459;
+$dev-orange: #ce4125;
+$default-grey: #999aa2;
+
+//FONTS
+$base-font: Poppins, sans-serif;
+
+//SPACING
+$spacing-xs: .5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
