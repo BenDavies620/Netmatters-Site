@@ -54,8 +54,8 @@ footer {
         }
 
         a {
-            color: $text-light;
-            font-size: .9rem;
+            color: $text-white;
+            font-size: 13px;
             transition: color .2s ease;
 
             &:hover {
@@ -96,7 +96,7 @@ footer {
         }
     }
 }
-}    
+}
 //LOGO & SOCIIAL LINKS
 .footer-company-info {
     display: flex;
@@ -118,7 +118,7 @@ footer {
 .footer-social-logos {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 0px 30px;
+    margin: 0 0 30px;
 
     svg {
         display: inline-block;
@@ -127,6 +127,13 @@ footer {
         stroke-width: 0;
         stroke: currentColor;
         fill: currentColor;
+    }
+
+    @media (max-width: 480px) {
+        width: 180px;
+    }
+    @media (min-width: 481px) {
+        flex-wrap: nowrap;
     }
 }
 .footer-social-logos a {
@@ -218,9 +225,13 @@ footer {
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             flex-direction: column;
             align-items: flex-start;
+
+            li::before {
+                content: none;
+            }
         }
     }
 }

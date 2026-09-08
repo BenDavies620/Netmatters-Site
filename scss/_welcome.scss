@@ -11,10 +11,12 @@
 
     .welcome {
         flex: 1 1 100%;
-        padding: 0px 15px;
 
         @media (max-width: 991px) {
             margin-bottom: 30px;
+        }
+        @media (min-width: 992px) {
+            padding:0px 15px;
         }
 
         h2 {
@@ -100,8 +102,11 @@
 
     .testimonials {
         flex: 1 1 100%;
-        padding: 0px 15px;
-        display: grid;
+        min-width: 0;
+
+        @media (min-width: 992px) {
+            padding:0px 15px;
+        }
 
         h2 {
             font-size: 2.25rem;
@@ -134,12 +139,14 @@
         .client-quote {
             font-size: 1.3rem;
             font-style: italic;
+            font-weight: 600;
         }
 
         .client-quote-author {
             font-size: 1.1rem;
             font-style: italic;
             color: $text-muted;
+            font-weight: 600;
 
             a {
                 color: $text-white;    
@@ -187,6 +194,8 @@
             color: $text-white;
             white-space: nowrap;
             transition: background-color 0.2s ease;
+            max-width: 100%;
+            box-sizing: border-box;
 
             .icon-arrow-right2 {
                 display: inline-block;
@@ -201,7 +210,6 @@
                 vertical-align: middle;
             }
         }
-
         .btn-google {
             background-color: #4387f6;
             margin: 0;
@@ -238,6 +246,8 @@
 
         .testimonials {
             flex: 1 1 calc(50% - 25px);
+            display: flex;
+            flex-direction: column;
         }
 
         .welcome, .testimonials {
@@ -249,6 +259,37 @@
         .review-buttons {
             flex-direction: row;
             flex-wrap: nowrap;
+        }
+    }
+
+    @media (max-width: 374px) {
+        .button-row-top {
+            width: 100%;
+        }
+
+        .btn-primary-inverse {
+            box-sizing: border-box;
+            max-width: 100%;
+            padding: 10px 20px;
+            font-size: 1.125rem;
+            white-space: nowrap;
+
+            .icon-arrow-right2 {
+                margin-left: 6px;
+            }
+        }
+
+        .review-buttons {
+            width: 100%;
+
+            .btn-primary {
+                max-width: 100%;
+                box-sizing: border-box;
+
+                .icon-arrow-right2 {
+                    margin-left: 6px;
+                }
+            }
         }
     }
 }

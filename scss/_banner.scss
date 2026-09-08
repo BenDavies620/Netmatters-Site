@@ -6,6 +6,10 @@
     position: relative;
     color: $text-white;
     text-align: center;
+    height: 550px;
+
+    display: flex;
+    align-items: center;
 
     &::before {
         content: "";
@@ -20,9 +24,7 @@
     .container {
         position: relative;
         z-index: 2;
-    }
-    .content {
-        padding: 60px 0;
+        width: 100%;
     }
     .text {
         text-align: center;
@@ -46,7 +48,8 @@
         transition: all .2s ease;
         line-height: 50px;
         &:hover {
-            background-color: darken($web-purple, 10%);    
+            background-color: darken($web-purple, 10%);
+            border-color: darken($web-purple, 10%);    
         }
         .icon-arrow-right2 {
             display: inline-block;
@@ -74,6 +77,19 @@
         p {
             font-size: 26px;
             line-height: 2.5rem;
+        }
+    }
+    @media (max-width: 410px) {
+        .content {
+            padding: 30px 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        p {
+            font-size: 1.25rem;
+            line-height: 1.5;
         }
     }
 }
