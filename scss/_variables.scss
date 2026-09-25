@@ -1,4 +1,35 @@
 //MIXINS
+@mixin nav-theme($color) {
+    > a {
+        color: $color;
+
+        small,
+        p {
+            color: $text-white;
+        }
+    }
+    &:hover > a {
+        background-color: lighten($color, 8%);
+        color: $text-white;
+    }
+    &:hover > a::after {
+        background-color: lighten($color, 8%);
+    }
+    .sub-menu-banner {
+        background-color: $color;
+    }
+}
+@mixin btn-base {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 1.063rem;
+    text-transform: uppercase;
+    border-radius: 3px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 35px;
+    height: auto;
+}
 @mixin web-purple {
     color: #fff;
     background-color: #926fb1;

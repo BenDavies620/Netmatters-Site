@@ -24,16 +24,18 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         padding: 0 20px;
         width: 100%;
         box-sizing: border-box;
         height: auto;
         max-height: none;
-        gap: 0;
+        gap: 90px;
         
         img {
+            flex-shrink: 0;
+
             filter: grayscale(100%);
             opacity: 0.85;
 
@@ -53,7 +55,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-end;
         padding: 0 20px;
         width: 100%;
@@ -61,6 +63,7 @@
         height: auto;
         max-height: none;
         overflow: visible;
+        gap: 90px;
     }
 
     .case-item {
@@ -103,10 +106,12 @@
         transition: opacity 0.3s ease, visibility 0.3s ease;
 
         h3 {
+            position: relative;
             font-size: 1.125rem;
-            padding-bottom: 12px;
+            padding-bottom: 17px;
             margin: 0;
             color: #fff;
+            font-weight: 400;
         }
         p {
             font-size: 13px;
@@ -116,7 +121,11 @@
 
             a {
                 color: #fff;
-                text-decoration: underline;
+                font-weight: 600;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -127,18 +136,18 @@
     }
 
     .box a.btn {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.875rem;
-        font-weight: 600;
-        line-height: normal;
-        padding: 10px 18px;
+        font-size: 1rem;
+        line-height: 35px;
+        padding: 5px 15px;
         text-transform: uppercase;
         border-radius: 3px;
         text-decoration: none;
         white-space: nowrap;
         transition: all 0.2s ease;
+        margin-top: 11px;
 
         &.btn-web {
             @include web-purple;
@@ -163,10 +172,13 @@
         }
 
         .icon-arrow-right2 {
-            width: 1em;
-            height: 1em;
-            margin-left: 8px;
+            height: 1rem;
+            width: 1rem;
+            margin-left: 12px;
+            margin-right: -4px;
             fill: currentColor;
+            line-height: 35px;
+            font-size: 1rem;
         }
     }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="ROBOTS" content="NOINDEX,NOFOLLOW">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -201,7 +201,7 @@
             <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
         </symbol>
     </svg>
-    <section class="header">
+    <header class="header">
         <div class="inner">
             <div class="container">
                 <div class="row">
@@ -227,9 +227,9 @@
                             </button>
                             <div class="search-form-container--tablet">
                                 <form method="get" action="#" accept-charset="UTF-8" class="search-form">
-                                    <label for="search-input" class="hidden">Search:</label>
-                                    <input class="search-bar" placeholder="Search..." id="search-input" name="keyword" type="text" value>
-                                    <button type="submit" id="search-submit">
+                                    <label for="search-input-tablet" class="hidden">Search:</label>
+                                    <input class="search-bar" placeholder="Search..." id="search-input-tablet" name="keyword" type="text" value>
+                                    <button type="submit" id="search-submit-tablet">
                                         <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
                                     </button>
                                 </form>
@@ -244,17 +244,17 @@
                 </div>
                 <div class="search-form-container--mobile">
                     <form method="get" action="#" accept-charset="UTF-8" class="search-form">
-                        <label for="search-input" class="hidden">Search:</label>
-                        <input class="search-bar" placeholder="Search..." id="search-input" name="keyword" type="text" value>
-                        <button type="submit" id="search-submit">
+                        <label for="search-input-mobile" class="hidden">Search:</label>
+                        <input class="search-bar" placeholder="Search..." id="search-input-mobile" name="keyword" type="text" value>
+                        <button type="submit" id="search-submit-mobile">
                             <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
                         </button>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="navigation">
+    </header>
+    <nav class="navigation" aria-label="Main navigation">
         <div class="main-navigation">
             <div class="container">
                 <ul>
@@ -721,13 +721,15 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </nav>
     <section class="banner">
         <div class="container">
             <div class="content">
                 <div class="text">
                     <h1>The East Of England's Leading Technology Company</h1>
-                    <p>Perfomance-driven digital and technology services with complete transparency.</p>
+                    <p>Performance-driven digital and technology services
+                        <br>
+                         with complete transparency.</p>
                     <a href="#" target="_blank" class="btn btn-primary-inverse btn-choose">WHY CHOOSE US?<svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
                 </div>
             </div>
@@ -800,6 +802,7 @@
         </div>
     </section>
     <section class="partners">
+        <h2 class="hidden">Accreditations</h2>
         <div class="partnercase-image">
             <img src="img/Partners/norfolk-carbon-charter.webp" alt="Norfolk Carbon Charter">
             <img src="img/Partners/PPC_logo.webp" alt="Prompt Payment Code">
@@ -850,7 +853,7 @@
                     <div class="headings-container">
                         <h2><strong>Latest News</strong></h2>
                         <h3 class="view-all-top">
-                            <a href="#">View All<strong><svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></strong></a>
+                            <a href="#" class="view-all">View All<strong><svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></strong></a>
                         </h3>
                     </div>
                 </div>
@@ -866,7 +869,7 @@
                                         <a class="img standard"><img src="img/Articles/how-much-could-vKZG.webp" alt="Bespoke software"></a>
                                     </div>
                                     <div class="block">
-                                        <h3><a href="#">How Much Could Bespoke Software Add to Your E...</a></h3>
+                                        <h3><a href="#" class="insights">How Much Could Bespoke Software Add to Your E...</a></h3>
                                         <p>If you’re a Managing Director or Senior Manager preparing your business for exit, you know that incr...</p>
                                         <a class="btn btn-software" href="#">Read More</a>
                                         <div class="user">
@@ -875,7 +878,7 @@
                                             </div>
                                             <div class="details">
                                                 <strong class="text-primary">Posted by Netmatters</strong><br>
-                                                " 27th June 2025 "
+                                                 27th June 2025 
                                             </div>
                                         </div>
                                     </div>
@@ -886,7 +889,7 @@
                                         <a class="img standard"><img src="img/Articles/AI-article.webp" alt="AI Integration for Business"></a>
                                     </div>
                                     <div class="block">
-                                        <h3><a href="#">How Can AI Benefit My Business?</a></h3>
+                                        <h3><a href="#" class="insights">How Can AI Benefit My Business?</a></h3>
                                         <p>The idea of integrating AI into your business operations may seem daunting, but there are undeniable...</p>
                                         <a class="btn btn-software" href="#">Read More</a>
                                         <div class="user">
@@ -895,18 +898,18 @@
                                             </div>
                                             <div class="details">
                                                 <strong class="text-primary">Posted by Netmatters</strong><br>
-                                                " 26th June 2025 "
+                                                 26th June 2025 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="A3">
                                     <div class="img-container">
-                                        <a href="#" class="btn-tooltip" title="View all: IT Support / Careers">Careers</a>
+                                        <a href="#" class="btn-tooltip careers" title="View all: IT Support / Careers">Careers</a>
                                         <a class="img standard"><img src="img/Articles/1st-line-technician.png" alt="Hiring 1st Line Tecnician"></a>
                                     </div>
                                     <div class="block">
-                                        <h3><a href="#">1st Line Technician</a></h3>
+                                        <h3><a href="#" class="career">1st Line Technician</a></h3>
                                         <p>Salary Range £25,000 -£29,000 + Pension Hours 40 hours per week, Monday - Friday Location Wymondham,...</p>
                                         <a class="btn btn-it" href="#">Read More</a>
                                         <div class="user">
@@ -915,7 +918,7 @@
                                             </div>
                                             <div class="details">
                                                 <strong class="text-primary">Posted by Bethany Shakespeare</strong><br>
-                                                "20th June 2025" 
+                                                 20th June 2025
                                             </div>
                                         </div>
                                     </div>
@@ -923,10 +926,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="view-all-link">
-                        <h3><a href="#">View All<strong><svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></strong></a></h3>
-                    </div>
                 </div>
+            </div>
+            <div class="view-all-link">
+                <h3><a href="#" class="view-all">View All <strong><svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></strong></a></h3>
             </div>
         </div>
     </section>
