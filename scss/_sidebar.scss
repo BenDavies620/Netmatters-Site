@@ -1,0 +1,306 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    height: 100%;
+    background: $dark-blue;
+    width: 275px;
+    overflow: auto;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0s 0.3s;
+    
+    .sidebar-section {
+        border-top: 1px solid hsla(0, 0%, 100%, .1);
+        border-bottom: 1px solid rgba(0, 0, 0, .25);
+
+        &:hover {
+            .sidebar-heading {
+                background-color: hsla(0, 0%, 100%, .05);
+            }
+        }
+
+        .sidebar-heading {
+            display: block;
+            color: #fff;
+            padding: 20px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            text-decoration: none;
+            line-height: 1;
+            position: relative;
+
+            &:focus {
+                outline: 1px solid #fff;
+                outline-offset: -1px;
+                border-radius: 3px;
+            }
+        }
+
+        .sidebar-links {
+            width: auto !important;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            &::before {
+                content: "";
+                display: table;
+            }
+
+            li {
+                border-top: 1px solid rgba(0, 0, 0, .45);
+
+                a {
+                    border-top: 1px solid hsla(0,0%,100%,.05);
+                    display: block;
+                    color: #fff;
+                    background-color: rgba(0,0,0,.25);
+                    padding: 15px 20px;
+                    text-transform: uppercase;
+                    font-size: .875rem;
+                    text-decoration: none;
+                    position: relative;
+
+                    &::before {
+                        content: "\BB";
+                        padding-right: 15px;
+                    }
+
+                    &:focus {
+                        outline: 1px solid #fff;
+                        outline-offset: -1px;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+    .services {
+        @media (max-width: 991px) {
+            display: none;
+            visibility: hidden;
+        }
+        @media (min-width: 992px) {
+            display: block;
+            visibility: visible;
+        }
+    }
+
+    .sidebar-mobile {
+        padding: 21px;
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            display: block;
+            visibility: visible;
+        }
+        @media (min-width: 992px) {
+            display: none;
+            visibility: hidden;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: -20px 0 0;
+
+            &::before {
+                content: "";
+                display: table;
+            }
+
+            .contact-us{
+                padding: 20px 0 0;
+
+                a {
+                    font-size: 1.125rem;
+                    padding: 19px 0 18px;
+                    border-radius: 3px;
+                    outline: 1px solid rgba(0,0,0,.25);
+                    border: 1px solid hsla(0,0%,100%,.1);
+                    display: block;
+                    color: #fff;
+                    text-align: center;
+                    text-transform: uppercase;
+                    text-decoration: none;
+
+                    &:hover {
+                        background-color: hsla(0, 0%, 100%, .05);
+                    }
+
+                    &:focus {
+                        outline: 1px solid #fff;
+                        outline-offset: -1px;
+                        border-radius: 3px;
+                    }
+                }
+            }
+
+            .software,.it,.digital,.telecoms,.web,.security,.developer-course {
+                padding: 20px 0 0;
+                
+                &:hover {
+                    .mobile-menu-heading {
+                        background-color: hsla(0, 0%, 100%, .05);
+                    }
+                }
+
+                .mobile-menu-heading {
+                    font-size: 1.125rem;
+                    padding: 19px 0 18px;
+                    border-radius: 3px;
+                    outline: 1px solid rgba(0,0,0,.25);
+                    border: 1px solid hsla(0,0%,100%,.1);
+                    display: block;
+                    color: #fff;
+                    text-align: center;
+                    text-transform: uppercase;
+                    text-decoration: none;
+
+                    &:focus-within {
+                        outline: 1px solid #fff;
+                        outline-offset: -1px;
+                        border-radius: 3px;
+                    }
+
+                    > a:focus {
+                        outline: none;
+                    }
+
+                    .icon-apps {
+                        display: block;
+                        padding-bottom: 10px;
+                        text-align: center;
+
+                        svg {
+                            width: 23px;
+                            height: 23px;
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    small {
+                        font-size: .625rem;
+                        padding-bottom: 1px;
+                        display: block;
+                        line-height: 1;
+                    }
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                .sub-menu-banner {
+                    margin-top: 20px;
+                    border-radius: 3px;
+                    overflow: hidden;
+
+                    .sub-menu {
+                        padding: 0;
+                        width: auto !important;
+                        margin: 0;
+
+                        &::before {
+                            content: "";
+                            display: table;
+                        }
+
+                        li {
+                            border-top: 1px solid rgba(0, 0, 0, .45);
+                            border-radius: 3px;
+
+                            a {
+                                display: block;
+                                color: #fff;
+                                text-align: center;
+                                text-transform: uppercase;
+                                text-decoration: none;
+                                border-top: 1px solid hsla(0,0%,100%,.05);
+                                background-color: rgba(0, 0, 0, .25);
+                                padding: 10px;
+
+                                &:focus {
+                                    outline: 1px solid #fff;
+                                    outline-offset: -1px;
+                                    border-radius: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .software > .mobile-menu-heading > a .icon-apps svg{
+                fill: $soft-yellow;
+            }
+            .it > .mobile-menu-heading > a .icon-apps svg {
+                fill: $it-blue;
+            }
+            .digital > .mobile-menu-heading > a .icon-apps svg {
+                fill: $dig-green;
+            }
+            .telecoms > .mobile-menu-heading > a .icon-apps svg {
+                fill: $tel-red;
+            }
+            .web > .mobile-menu-heading > a .icon-apps svg {
+                fill: $web-purple;
+            }
+            .security > .mobile-menu-heading > a .icon-apps svg {
+                fill: $sec-pink;
+            }
+            .developer-course > .mobile-menu-heading > a .icon-apps svg {
+                fill: $dev-orange;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        width: 350px;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    transition: transform .3s ease;
+}
+
+body.menu-open {
+    overflow: hidden;
+
+    .sidebar {
+        transform: translateX(0);
+        visibility: visible;
+        transition-delay: 0s;
+    }
+
+    .page-wrapper {
+        transform: translateX(-275px);
+
+        @media (min-width: 992px) {
+            transform: translateX(-350px);
+        }
+    }
+
+    .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+    }
+}
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    background-color: rgba(0, 0, 0, .5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility 0s .3s;
+}

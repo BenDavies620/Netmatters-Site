@@ -28,7 +28,7 @@
     }
 
     .mobile-container {
-        padding: 0 15px;
+        padding: 0 12px 0 15px;
         display: flex;
         align-items: center;
         gap: 12px;
@@ -50,66 +50,13 @@
             }
         }
 
-        .hamburger {
-            margin: 0;
-            padding: 5px 15px;
-            background-color: $dark-blue;
-            border: none;
-            border-radius: 3px;
-            color: $text-white;
-            cursor: pointer;
-            width: 63px;
-            height: 56px;
-            position: relative;
-            flex-shrink: 0;
-            transition: background-color 0.2s ease;
-            &:hover {
-                background-color: darken($dark-blue, 10%);
-            }
-            .hamburger-box {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 33px;
-                height: 19px;
-            }
-            .hamburger-inner {
-                margin: -1px 0 0;
-                position: absolute;
-                top: 50%;
-                left: 0;
-                width: 100%;
-                height: 4px;
-                background-color: $text-white;
-                transition: all 0.2s ease;
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: -10px;
-                    left: 0;
-                    width: 100%;
-                    height: 4px;
-                    background-color: $text-white;
-                }
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 10px;
-                    left: 0;
-                    width: 100%;
-                    height: 4px;
-                    background-color: $text-white;
-                }
-            }
-        }
         @media (min-width: 768px) {
             display: none;
         }
     }
 
     .action-container {
-        padding: 0 15px;
+        padding: 0 20px 0 15px;
         display: none;
         flex-shrink: 0;
         align-items: center;
@@ -260,64 +207,6 @@
                     }
                 }
             }
-
-            .hamburger {
-                margin: 0 0 0 20px;
-                padding: 5px 15px;
-                background-color: $dark-blue;
-                border: none;
-                border-radius: 3px;
-                color: $text-white;
-                cursor: pointer;
-                width: 63px;
-                height: 56px;
-                position: relative;
-                flex-shrink: 0;
-                transition: background-color 0.2s ease;
-
-                &:hover {
-                    background-color: darken($dark-blue, 10%);
-                }
-
-                .hamburger-box {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 33px;
-                    height: 19px;
-                }
-                .hamburger-inner {
-                    margin: -1px 0 0;
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    width: 100%;
-                    height: 4px;
-                    background-color: $text-white;
-                    transition: all 0.2s ease;
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: -10px;
-                        left: 0;
-                        width: 100%;
-                        height: 4px;
-                        background-color: $text-white;
-                    }
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 10px;
-                        left: 0;
-                        width: 100%;
-                        height: 4px;
-                        background-color: $text-white;
-                    }
-                }
-            }
         }
     }
 
@@ -371,6 +260,77 @@
                 width: 1.1em;
                 height: 1.1em;
                 fill: currentColor;
+            }
+        }
+    }
+
+    .hamburger {
+        margin: 0 15px 0 0;
+        padding: 5px 15px;
+        background-color: $dark-blue;
+        border: none;
+        border-radius: 3px;
+        color: $text-white;
+        cursor: pointer;
+        width: 63px;
+        height: 56px;
+        position: relative;
+        flex-shrink: 0;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: darken($dark-blue, 10%);
+        }
+
+        .hamburger-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 33px;
+            height: 19px;
+        }
+        .hamburger-inner {
+            margin: -1px 0 0;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: $text-white;
+            transition: background-color .3s ease;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background-color: $text-white;
+                transition: top .3s ease, transform .3s ease;
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                top: 10px;
+            }
+
+            body.menu-open & {
+                background-color: transparent;
+
+                &::before {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+
+                &::after {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
             }
         }
     }
