@@ -1,5 +1,4 @@
 .banner {
-    background-image: url('../img/netmatters.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -9,6 +8,28 @@
     height: 550px;
     display: flex;
     align-items: center;
+
+    &.banner-main {
+        background-image: url(../img/netmatters-banner.webp);
+    }
+    &.banner-software {
+        background-image: url(../img/bespoke-software.webp);
+    }
+    &.banner-it {
+        background-image: url(../img/it-support.webp);
+    }
+    &.banner-digital {
+        background-image: url(../img/digital-marketing.webp);
+    }
+    &.banner-telecom {
+        background-image: url(../img/telecoms.webp);
+    }
+    &.banner-web {
+        background-image: url(../img/web.webp);
+    }
+    &.banner-security {
+        background-image: url(../img/cyber-security.webp);
+    }
 
     &::before {
         content: "";
@@ -63,6 +84,47 @@
             fill: currentColor;
             vertical-align: middle;
         }
+
+        &.btn-software {
+            @include software-yellow;
+
+            &:hover {
+                background-color: darken($soft-yellow, 10%);
+                border-color: darken($soft-yellow, 10%);
+            }
+        }
+        &.btn-it {
+            @include it-blue;
+
+            &:hover {
+                background-color: darken($it-blue, 10%);
+                border-color: darken($it-blue, 10%);
+            }
+        }
+        &.btn-digital {
+            @include digital-green;
+
+            &:hover {
+                background-color: darken($dig-green, 10%);
+                border-color: darken($dig-green, 10%);
+            }
+        }
+        &.btn-telecoms {
+            @include telecoms-red;
+
+            &:hover {
+                background-color: darken($tel-red, 10%);
+                border-color: darken($tel-red, 10%);
+            }
+        }
+        &.btn-security {
+            @include security-pink;
+
+            &:hover {
+                background-color: darken($sec-pink, 10%);
+                border-color: darken($sec-pink, 10%);
+            }
+        }
     }
 
     @media (min-width: 992px) {
@@ -97,6 +159,48 @@
     @media (min-width: 768px) {
         &::before {
             background: linear-gradient(270deg, transparent 25%, #000);
+        }
+    }
+}
+
+.banner-slider {
+    &.slick-dotted {
+        margin-bottom: 0;
+    }
+
+    .slick-dots {
+        bottom: 44px;
+        z-index: 3;
+        transition: color 0.3s ease;
+
+        li button {
+            &::before {
+                content: "";
+                width: 11px;
+                height: 11px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.5);
+                opacity: 1;
+            }
+
+            &:focus-visible {
+                outline: 2px solid #fff;
+                outline-offset: 4px;
+                border-radius: 50%;
+            }
+        }
+
+        li.slick-active button::before {
+            background-color: #fff;
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        li:not(.slick-active) button:hover::before {
+            background-color: rgba(134, 151, 145, 0.5);
         }
     }
 }
