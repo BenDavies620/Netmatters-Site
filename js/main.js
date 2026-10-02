@@ -6,7 +6,16 @@ $(function () {
         dots: true,
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 4000
+        autoplaySpeed: 4000,
+        adaptiveHeight: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    adaptiveHeight: true
+                }
+            }
+        ]
     });
 });
 

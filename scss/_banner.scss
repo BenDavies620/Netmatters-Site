@@ -205,3 +205,10 @@
     }
 }
 
+@media (max-width: 767px) {
+    .banner {
+        height: auto;
+        min-height: 550px;
+        padding: 60px 0 50px;
+    }
+}
