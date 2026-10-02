@@ -76,3 +76,20 @@ window.addEventListener('scroll', () => {
 
     previousScrollY = currentScrollY
 });
+
+//============================
+//COOKIE POP UP
+//============================
+const acceptButton = document.querySelector('.accept-btn');
+const cookieApp = document.querySelector('.cookie-app');
+
+acceptButton.addEventListener('click', () =>{
+    cookieApp.classList.add('is-hidden');
+    localStorage.setItem('cookiesAccepted', 'true');
+});
+
+const savedConsent = localStorage.getItem('cookiesAccepted');
+
+if (savedConsent !== 'true') {
+    cookieApp.classList.remove('is-hidden');
+}
