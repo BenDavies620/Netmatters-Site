@@ -93,3 +93,21 @@ const savedConsent = localStorage.getItem('cookiesAccepted');
 if (savedConsent !== 'true') {
     cookieApp.classList.remove('is-hidden');
 }
+
+//============================
+//PARTNER & CASE STUDY CAROUSEL
+//============================
+$(document).ready(function () {
+    $('.partners-slider, .case-studies-slider').slick({
+        rows: 0,
+        variableWidth: true,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 500,
+        pauseOnHover: true
+    });
+});

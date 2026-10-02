@@ -21,28 +21,35 @@
     overflow-x: hidden;
 
     .partnercase-image {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: center;
+        display: block;
         padding: 0 20px;
-        width: 100%;
-        box-sizing: border-box;
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .partner-item {
+        flex-shrink: 0;
         height: auto;
-        max-height: none;
-        gap: 90px;
-        
-        img {
-            flex-shrink: 0;
+        padding: 0 45px;
+    }
 
-            filter: grayscale(100%);
-            opacity: 0.85;
+    img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: 70px;
 
-            &:hover {
+        filter: grayscale(100%);
+        opacity: 0.85;
+        transition: filter 0.3s ease, opacity 0.3s ease;
+
+        &:hover {
             filter: grayscale(0%);
             opacity: 1;
-            }
         }
     }
 }
@@ -51,19 +58,17 @@
     overflow-x: clip;
     
     .partnercase-image {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: flex-end;
+        display: block;
         padding: 0 20px;
-        width: 100%;
-        box-sizing: border-box;
-        height: auto;
-        max-height: none;
+    }
+
+    .slick-list {
         overflow: visible;
-        gap: 90px;
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: flex-end;
     }
 
     .case-item {
@@ -72,6 +77,8 @@
         flex-direction: column;
         align-items: center;
         flex-shrink: 0;
+        height: auto;
+        padding: 0 45px;
     }
 
     img {
@@ -127,6 +134,15 @@
                     text-decoration: underline;
                 }
             }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 50px;
         }
     }
 
