@@ -2,11 +2,33 @@
 //BANNER SLIDE
 //============================
 $(function () {
-    $('.banner-slider').slick({
+    $('.banner-slider, .partners-slider, .case-studies-slider')
+    .attr('tabindex', '-1')
+    .on('beforeChange afterChange', function () {
+        const focusedElement = document.activeElement;
+        const focusedSlide = focusedElement
+            ? focusedElement.closest('.slick-slide')
+            : null;
+
+        if (focusedSlide && this.contains(focusedSlide)) {
+            this.focus({ preventScroll: true });
+        }
+    });
+
+    $('.banner-slider')
+    .on('swipe', function () {
+        $(this).slick('slickPlay');
+    })
+    .slick({
         dots: true,
         arrows: false,
         autoplay: true,
         autoplaySpeed: 4000,
+
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        focusOnChange: false,
+
         adaptiveHeight: false,
         responsive: [
             {
@@ -83,6 +105,11 @@ window.addEventListener('scroll', () => {
         headerWrapper.classList.remove('is-visible');
     }
 
+    headerWrapper.classList.toggle(
+        'is-scrolled',
+        currentScrollY >= headerWrapper.offsetHeight
+    );
+
     previousScrollY = currentScrollY
 });
 
@@ -117,6 +144,9 @@ $(document).ready(function () {
         autoplay: true,
         autoplaySpeed: 3000,
         speed: 500,
-        pauseOnHover: true
+        pauseOnHover: true,
+        draggable: false,
+        swipe: false,
+        touchMove: false
     });
 });
