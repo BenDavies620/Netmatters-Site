@@ -186,6 +186,13 @@
                 background-color: darken($soft-yellow, 10%);
             }
         }
+        &.btn-it {
+            @include it-blue;
+            border: none;
+            &:hover {
+                background-color: darken($it-blue, 10%);
+            }
+        }
 
         .icon-arrow-right2 {
             height: 1rem;
