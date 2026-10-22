@@ -130,9 +130,9 @@ if (savedConsent !== 'true') {
     cookieApp.classList.remove('is-hidden');
 }
 
-//============================
+//==============================
 //PARTNER & CASE STUDY CAROUSEL
-//============================
+//==============================
 $(document).ready(function () {
     $('.partners-slider, .case-studies-slider').slick({
         rows: 0,
@@ -150,3 +150,90 @@ $(document).ready(function () {
         touchMove: false
     });
 });
+
+//=======================
+//OUT OF HOURS ACCORDION
+//=======================
+$(function () {
+    const supportToggle = $('.support-toggle');
+    const supportContent = $('#support-content');
+
+    supportToggle.on('click', function () {
+        const isExpanded =
+            supportToggle.attr('aria-expanded') === 'true';
+
+        supportToggle.attr('aria-expanded', String(!isExpanded));
+
+        supportContent.stop(true, true).slideToggle(400);
+    });
+});
+
+//============================
+//CONTACT FORM VALIDATION
+//============================
+const contactForm = document.querySelector('#contact-form');
+
+if (contactForm) {
+    const fields = contactForm.querySelectorAll(
+        'input[required], textarea[required]'
+    );
+
+    const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    function isFieldEmpty(field) {
+        return !field.value.trim();
+    }
+
+    function showError(field) {
+        field.classList.add('error');
+        field.setAttribute('aria-invalid', 'true');
+    }
+
+    function clearError(field) {
+        field.classList.remove('error');
+        field.removeAttribute('aria-invalid');
+    }
+
+    contactForm.addEventListener('submit', function (event) {
+        let formIsValid = true;
+
+        for (let i = 0; i < fields.length; i++) {
+            const field = fields[i];
+
+            if (isFieldEmpty(field)) {
+                showError(field);
+                formIsValid = false;
+            } else if (
+                field.name === 'email' &&
+                !emailRegex.test(field.value.trim())
+            ) {
+                showError(field);
+                formIsValid = false;
+            } else {
+                clearError(field);
+            }
+        }
+
+        if (!formIsValid) {
+            event.preventDefault();
+            contactForm.querySelector('.error').focus();
+        }
+    });
+
+    fields.forEach(function (field) {
+        field.addEventListener('input', function () {
+            if (
+                field.classList.contains('error') &&
+                !isFieldEmpty(field)
+            ) {
+                if (field.name === 'email') {
+                    if (emailRegex.test(field.value.trim())) {
+                        clearError(field);
+                    }
+                } else {
+                    clearError(field);
+                }
+            }
+        });
+    });
+}

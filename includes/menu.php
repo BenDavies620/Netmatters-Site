@@ -2,7 +2,7 @@
     <nav class="sidebar" id="sidebar" aria-label="Side navigation">
         <div class="sidebar-mobile">
             <ul>
-                <li class="contact-us"><a href="#">Contact Us</a></li>
+                <li class="contact-us"><a href="contact-us.php">Contact Us</a></li>
                 <li data-key="software" class="software nav-item">
                     <div class="mobile-menu-heading">
                         <a href="#">

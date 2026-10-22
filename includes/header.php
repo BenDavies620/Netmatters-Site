@@ -5,7 +5,7 @@
                         <div class="row">
                             <div class="header-logo">
                                 <div class="logo-container">
-                                    <a href="#" class="logo"><img src="img/header-logo.webp" alt="Netmatters"></a>
+                                    <a href="index.php" class="logo"><img src="img/header-logo.webp" alt="Netmatters"></a>
                                 </div>
                             </div>
                             <div class="mobile-container">
@@ -14,7 +14,7 @@
                             <div class="action-container">
                                 <div class="action">
                                     <a href="#" class="btn btn-it"><svg class="icon-mouse"><use xlink:href="#icon-mouse"></use></svg> Support </a>
-                                    <a href="#" class="btn  btn-default"><svg class="icon-paperplane"><use xlink:href="#icon-paperplane"></use></svg> Contact </a>
+                                    <a href="contact-us.php" class="btn  btn-default"><svg class="icon-paperplane"><use xlink:href="#icon-paperplane"></use></svg> Contact </a>
                                     <button type="button" class="search-icon-only">
                                         <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
                                     </button>
