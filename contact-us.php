@@ -1,67 +1,9 @@
 <?php
+session_start();
 
-require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/includes/contact-handler.php';
 
 $pageTitle = 'Contact Us | Netmatters';
-
-$errors = [];
-$name = '';
-$company = '';
-$email = '';
-$telephone = '';
-$message = '';
-$marketing = 0;
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_POST['name'] ?? '');
-    $company = trim($_POST['company'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $telephone = trim($_POST['telephone'] ?? '');
-    $message = trim($_POST['message'] ?? '');
-    $marketing = isset($_POST['marketing']) ? 1 : 0;
-
-    $requiredFields = [
-        'name' => 'Please enter your name.',
-        'email' => 'Please enter your email address.',
-        'telephone' => 'Please enter your telephone number.',
-        'message' => 'Please enter your message.'
-    ];
-    
-    foreach($requiredFields as $field => $errorMessage) {
-        $value = trim($_POST[$field] ?? '');
-
-        if ($value === '') {
-            $errors[$field] = $errorMessage;
-        }
-    }
-
-    if ($email !== '') {
-        $result = filter_var($email, FILTER_VALIDATE_EMAIL);
-
-        if ($result === false) {
-            $errors['email'] = 'Please enter a valid email address.';
-        }
-    }
-
-    if ($errors === []) {
-        $sql = 'INSERT INTO enquiries(name, company, email, telephone, message, marketing)
-        VALUES (:name, :company, :email, :telephone, :message, :marketing)';
-
-        $stmt = $pdo->prepare($sql);
-
-        $stmt->execute([
-            'name' => $name,
-            'company' => $company,
-            'email' => $email,
-            'telephone' => $telephone,
-            'message'=> $message,
-            'marketing' =>$marketing
-        ]);
-
-        header('Location: contact-us.php?success=1#contact-form', true, 303);
-        exit;
-    }
-}
 
 ?>
 
@@ -213,14 +155,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="enquiry-form">
                             <form id="contact-form" action="contact-us.php#contact-form" method="post" novalidate>
-                                <?php if (($_GET['success'] ?? '') === '1'): ?>
-                                    <p class="form-success" role="status">Your enquiry has been submitted successfully.</p>
+                                <?php if ($successMessage !== ''): echo '<p class="form-success" role="status">' . htmlspecialchars($successMessage) . '</p>'; ?>
                                 <?php endif; ?>
                                 <?php if ($errors !== []): ?>
                                     <div class="form-errors" role="alert">
                                         <ul>
                                             <?php foreach($errors as $errorMessage) {
-                                                echo '<li>'.htmlspecialchars($errorMessage).'</li>';
+                                                echo '<li>' . htmlspecialchars($errorMessage) . '</li>';
                                             } ?>
                                         </ul>
                                     </div>
@@ -237,6 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             autocomplete="name"
                                             required
                                             value="<?= htmlspecialchars($name) ?>"
+                                            maxlength="100"
                                         >
                                     </div>
 
@@ -248,6 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             name="company"
                                             autocomplete="organization"
                                             value="<?= htmlspecialchars($company) ?>"
+                                            maxlength="150"
                                         >
                                     </div>
 
@@ -262,6 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             autocomplete="email"
                                             required
                                             value="<?= htmlspecialchars($email) ?>"
+                                            maxlength="254"
                                         >
                                     </div>
 
@@ -276,6 +220,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             autocomplete="tel"
                                             required
                                             value="<?= htmlspecialchars($telephone) ?>"
+                                            maxlength="30"
                                         >
                                     </div>
                                 </div>
@@ -289,6 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         name="message"
                                         rows="5"
                                         required
+                                        maxlength="5000"
                                     ><?= htmlspecialchars($message) ?></textarea>
                                 </div>
 
