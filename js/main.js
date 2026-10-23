@@ -178,7 +178,7 @@ if (contactForm) {
         'input[required], textarea[required]'
     );
 
-    const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     function isFieldEmpty(field) {
         return !field.value.trim();

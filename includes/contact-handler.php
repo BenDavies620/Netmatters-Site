@@ -14,12 +14,46 @@ $successMessage = $_SESSION['success-message'] ?? '';
 unset($_SESSION['success-message']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_POST['name'] ?? '');
-    $company = trim($_POST['company'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $telephone = trim($_POST['telephone'] ?? '');
-    $message = trim($_POST['message'] ?? '');
+    $nameInput = $_POST['name'] ?? '';
+    $companyInput = $_POST['company'] ?? '';
+    $emailInput = $_POST['email'] ?? '';
+    $telephoneInput = $_POST['telephone'] ?? '';
+    $messageInput = $_POST['message'] ?? '';
+
     $marketing = isset($_POST['marketing']) ? 1 : 0;
+
+    if (is_string($nameInput)) {
+        $name = trim($nameInput);
+    } else {
+        $errors['name'] = 'Please enter a valid name.';
+    }
+    if (is_string($companyInput)) {
+        $company = trim($companyInput);
+    } else {
+        $errors['company'] = 'Please enter a valid company name.';
+    }
+    if (is_string($emailInput)) {
+        $email = trim($emailInput);
+    } else {
+        $errors['email'] = 'Please enter a valid email address.';
+    }
+    if (is_string($telephoneInput)) {
+        $telephone = trim($telephoneInput);
+    } else {
+        $errors['telephone'] = 'Please enter a valid telephone number.';
+    }
+    if (is_string($messageInput)) {
+        $message = trim($messageInput);
+    } else {
+        $errors['message'] = 'Please enter a valid message.';
+    }
+
+    $fieldValues = [
+        'name' => $name,
+        'email' => $email,
+        'telephone' => $telephone,
+        'message' => $message,
+    ];
 
     $requiredFields = [
         'name' => 'Please enter your name.',
@@ -28,10 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'message' => 'Please enter your message.'
     ];
     
-    foreach($requiredFields as $field => $errorMessage) {
-        $value = trim($_POST[$field] ?? '');
-
-        if ($value === '') {
+    foreach ($requiredFields as $field => $errorMessage) {
+        if ($fieldValues[$field] === '' && !isset($errors[$field])) {
             $errors[$field] = $errorMessage;
         }
     }
@@ -81,3 +113,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 }
+
+?>
