@@ -76,6 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    if (!preg_match("/^[\p{L}\p{M}]+(?:[ '\x{2019}-][\p{L}\p{M}]+)*$/u", $name)) {
+        $errors['name'] = 'Please enter a valid name.';
+    }
     if (mb_strlen($name) > 100) {
         $errors['name'] = 'Please enter a name no longer than 100 characters.';
     }
@@ -85,8 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mb_strlen($company) > 150) {
         $errors['company'] = 'Please enter a company name no longer than 150 characters.';
     }
-    if (mb_strlen($telephone) > 30) {
-        $errors['telephone'] = 'Please enter a phone number no longer than 30 characters.';
+    if (!preg_match('/^\+?[0-9\s().-]+$/', $telephone)) {
+        $errors['telephone'] = 'Please enter a valid telephone number.';
+    } elseif (preg_match_all('/[0-9]/', $telephone) < 7 || preg_match_all('/[0-9]/', $telephone) > 15) {
+        $errors['telephone'] = 'Please enter a phone number containing between 7 and 15 digits.';
     }
     if (mb_strlen($message) > 5000) {
         $errors['message'] = 'Please enter a message no longer than 5000 characters.';

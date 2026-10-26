@@ -349,7 +349,7 @@
     top: calc(-1 * var(--header-height));
     z-index: 7;
     background-color: #fff;
-    transition: top .3s ease;
+    transition: top .5s ease;
 
     &.is-visible {
         top: 0;
@@ -358,8 +358,4 @@
 
 .header-wrapper.is-scrolled:not(.is-visible) {
     pointer-events: none;
-
-    .navigation {
-        visibility: hidden;
-    }
 }

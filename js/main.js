@@ -236,4 +236,12 @@ if (contactForm) {
             }
         });
     });
+
+    const successMessage = document.querySelector('.form-success');
+
+    if (successMessage) {
+        setTimeout(function () {
+            successMessage.remove();
+        }, 2500);
+    }
 }
